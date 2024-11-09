@@ -1,15 +1,10 @@
-import { BaseCommand } from "./baseCommand";
-import { Robot } from "../robot";
 import { Table } from "../table";
 import { Logger } from "../logger";
+import { RequiresPlacementCommand } from "./requiresPlacementCommand";
+import { IPlacedRobot } from "../interfaces/placedRobot.interface";
 
-export class MoveCommand extends BaseCommand {
-  execute(robot: Robot, table: Table): void {
-    if (!robot.isPlaced()) {
-      Logger.warn("Move command ignored: Robot has not been placed.");
-      return;
-    }
-
+export class MoveCommand extends RequiresPlacementCommand {
+  executeWithPlacedRobot(robot: IPlacedRobot, table: Table): void {
     let { x, y, direction } = robot;
     let newX = x;
     let newY = y;

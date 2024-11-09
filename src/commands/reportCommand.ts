@@ -1,13 +1,8 @@
-import { BaseCommand } from "./baseCommand";
-import { Robot } from "../robot";
-import { Logger } from "../logger";
+import { RequiresPlacementCommand } from "./requiresPlacementCommand";
+import { IPlacedRobot } from "../interfaces/placedRobot.interface";
 
-export class ReportCommand extends BaseCommand {
-  execute(robot: Robot): void {
-    if (!robot.isPlaced()) {
-      Logger.warn("Report command ignored: Robot has not been placed.");
-    }
-
-    console.log(`Output: ${robot.x},${robot.y},${robot.direction}`);
+export class ReportCommand extends RequiresPlacementCommand {
+  executeWithPlacedRobot(robot: IPlacedRobot): void {
+    robot.output();
   }
 }

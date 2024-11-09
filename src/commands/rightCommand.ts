@@ -1,15 +1,10 @@
+import { IPlacedRobot } from "../interfaces/placedRobot.interface";
 import { Logger } from "../logger";
-import { Robot } from "../robot";
 import { Direction } from "../types/direction.type";
-import { BaseCommand } from "./baseCommand";
+import { RequiresPlacementCommand } from "./requiresPlacementCommand";
 
-export class RightCommand extends BaseCommand {
-  execute(robot: Robot): void {
-    if (!robot.isPlaced()) {
-      Logger.warn("Right command ignored: Robot has not been placed.");
-      return;
-    }
-
+export class RightCommand extends RequiresPlacementCommand {
+  executeWithPlacedRobot(robot: IPlacedRobot): void {
     const directions: Direction[] = ["NORTH", "EAST", "SOUTH", "WEST"];
     const idx = directions.indexOf(robot.direction);
     robot.changeDirection(directions[(idx + 1) % 4]);

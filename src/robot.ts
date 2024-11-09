@@ -1,16 +1,13 @@
+import { IRobot } from "./interfaces/robot.interface";
 import { Direction } from "./types/direction.type";
 
-export class Robot {
+export class Robot implements IRobot {
   x: number | null = null;
   y: number | null = null;
   direction: Direction | null = null;
 
   isPlaced(): this is { x: number; y: number; direction: Direction } {
-    return (
-      this.x !== undefined &&
-      this.y !== undefined &&
-      this.direction !== undefined
-    );
+    return this.x !== null && this.y !== null && this.direction !== null;
   }
 
   place(x: number, y: number, direction: Direction): void {
