@@ -2,14 +2,13 @@ import {
   BaseCommand,
   LeftCommand,
   MoveCommand,
-  PlaceCommand,
   ReportCommand,
   RightCommand,
 } from "./commands";
+import { parsePlaceCommand } from "./helpers/parsePlaceCommand";
 import { Logger } from "./logger";
 import { Robot } from "./robot";
 import { Table } from "./table";
-import { Direction } from "./types/direction.type";
 
 export class Commander {
   private robot: Robot;
@@ -21,28 +20,20 @@ export class Commander {
   }
 
   parseCommand(input: string): BaseCommand | null {
-    const [commandStr, argsStr] = input.trim().split(" ");
+    const trimmedInput = input.trim();
+
+    if (trimmedInput === "") {
+      Logger.error("Empty command received.");
+      return null;
+    }
+
+    const [commandStr, ...argsArr] = trimmedInput.split(" ");
     const command = commandStr.toUpperCase();
+    const argsStr = argsArr.join(" ");
 
     switch (command) {
       case "PLACE":
-        if (argsStr) {
-          const [xStr, yStr, directionStr] = argsStr.split(",");
-          const x = parseInt(xStr, 10);
-          const y = parseInt(yStr, 10);
-          const direction = directionStr.toUpperCase() as Direction;
-          if (
-            isNaN(x) ||
-            isNaN(y) ||
-            !["NORTH", "EAST", "SOUTH", "WEST"].includes(direction)
-          ) {
-            Logger.error("Invalid PLACE command.");
-            return null;
-          }
-          return new PlaceCommand(x, y, direction);
-        }
-        Logger.error("Invalid PLACE command: Missing arguments.");
-        return null;
+        return parsePlaceCommand(argsStr);
       case "MOVE":
         return new MoveCommand();
       case "LEFT":
