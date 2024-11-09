@@ -1,7 +1,7 @@
-import { MoveCommand } from "../../src/commands/moveCommand";
-import { Robot } from "../../src/robot";
-import { Table } from "../../src/table";
-import { Logger } from "../../src/logger";
+import { MoveCommand } from "../../../src/commands/moveCommand";
+import { Robot } from "../../../src/robot";
+import { Table } from "../../../src/table";
+import { Logger } from "../../../src/logger";
 
 describe("MoveCommand", () => {
   let robot: Robot;

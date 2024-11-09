@@ -1,7 +1,7 @@
-import { PlaceCommand } from "../../src/commands/placeCommand";
-import { Robot } from "../../src/robot";
-import { Table } from "../../src/table";
-import { Logger } from "../../src/logger";
+import { PlaceCommand } from "../../../src/commands/placeCommand";
+import { Robot } from "../../../src/robot";
+import { Table } from "../../../src/table";
+import { Logger } from "../../../src/logger";
 
 describe("PlaceCommand", () => {
   let robot: Robot;

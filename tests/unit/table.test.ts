@@ -1,4 +1,4 @@
-import { Table } from "../src/table";
+import { Table } from "../../src/table";
 
 describe("Table Class", () => {
   let table: Table;

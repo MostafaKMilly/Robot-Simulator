@@ -1,6 +1,6 @@
-import { Commander } from "../src/commander";
-import { Robot } from "../src/robot";
-import { Table } from "../src/table";
+import { Commander } from "../../src/commander";
+import { Robot } from "../../src/robot";
+import { Table } from "../../src/table";
 import {
   BaseCommand,
   PlaceCommand,
@@ -8,8 +8,8 @@ import {
   LeftCommand,
   RightCommand,
   ReportCommand,
-} from "../src/commands";
-import { Logger } from "../src/logger";
+} from "../../src/commands";
+import { Logger } from "../../src/logger";
 
 describe("Commander Class", () => {
   let robot: Robot;

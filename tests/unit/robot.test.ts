@@ -1,4 +1,4 @@
-import { Robot } from "../src/robot";
+import { Robot } from "../../src/robot";
 
 describe("Robot Class", () => {
   let robot: Robot;

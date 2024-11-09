@@ -1,6 +1,6 @@
-import { parsePlaceCommand } from "../../src/helpers/parsePlaceCommand";
-import { PlaceCommand } from "../../src/commands/placeCommand";
-import { Logger } from "../../src/logger";
+import { parsePlaceCommand } from "../../../src/helpers/parsePlaceCommand";
+import { PlaceCommand } from "../../../src/commands/placeCommand";
+import { Logger } from "../../../src/logger";
 
 describe("parsePlaceCommand Function", () => {
   beforeEach(() => {

@@ -1,6 +1,6 @@
-import { ReportCommand } from "../../src/commands/reportCommand";
-import { Robot } from "../../src/robot";
-import { Table } from "../../src/table";
+import { ReportCommand } from "../../../src/commands/reportCommand";
+import { Robot } from "../../../src/robot";
+import { Table } from "../../../src/table";
 
 describe("ReportCommand", () => {
   let robot: Robot;
