@@ -8,8 +8,8 @@ The **Robot Simulator** is a command-line application that simulates a toy robot
 
 ### Prerequisites
 
-- **Node.js** (v14 or higher): [Download Node.js](https://nodejs.org/)
-- **Docker** (optional, for containerization): [Download Docker](https://www.docker.com/get-started)
+- **Node.js** (v14 or higher)
+- **Docker** (optional, for containerization)
 
 ## How to Run the Project
 
