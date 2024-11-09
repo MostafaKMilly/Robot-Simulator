@@ -89,7 +89,7 @@ The **Robot Simulator** is a command-line application that simulates a toy robot
 
    This command will execute all unit and integration tests, providing a summary of passed and failed tests.
 
-### Running Tests with Docker (Optional)
+### Running Tests with Docker
 
 If you prefer to run tests inside a Docker container:
 
