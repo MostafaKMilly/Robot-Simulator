@@ -36,12 +36,12 @@ export class Commander {
             isNaN(y) ||
             !["NORTH", "EAST", "SOUTH", "WEST"].includes(direction)
           ) {
-            console.error("Invalid PLACE command.");
+            Logger.error("Invalid PLACE command.");
             return null;
           }
           return new PlaceCommand(x, y, direction);
         }
-        console.error("Invalid PLACE command: Missing arguments.");
+        Logger.error("Invalid PLACE command: Missing arguments.");
         return null;
       case "MOVE":
         return new MoveCommand();
@@ -52,7 +52,7 @@ export class Commander {
       case "REPORT":
         return new ReportCommand();
       default:
-        console.error(`Unknown command: ${command}`);
+        Logger.error(`Unknown command: ${command}`);
         return null;
     }
   }
