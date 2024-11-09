@@ -41,6 +41,12 @@ The **Robot Simulator** is a command-line application that simulates a toy robot
 
    The application will start and await your commands.
 
+5. **Run Commands from a File (Optional)**
+
+   ```bash
+   npm start < commands.txt
+   ```
+
 ### Using Docker
 
 1. **Build the Docker Image**
@@ -57,7 +63,7 @@ The **Robot Simulator** is a command-line application that simulates a toy robot
 
    You can now input commands directly into the Docker container.
 
-3. **Run Commands from a File**
+3. **Run Commands from a File (Optional)**
 
    ```bash
    docker run -i robot-simulator < commands.txt
